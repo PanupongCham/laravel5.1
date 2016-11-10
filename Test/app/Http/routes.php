@@ -27,10 +27,12 @@ Route::get('/register',function(){
 	return view('register');
 });
 
-Route::get('/test', function(){
-	return view('test');
+
+Route::get('rr','RedirectController@index');
+
+Route::get('/redirectcontroller',function(){
+	return redirect()->action('RedirectController@index');
 });
 
-Route::get('/test2', function(){
-	return view('test2');
-});
+Route::get('insert','StudInsertController@insertform');
+Route::post('create','StudInsertController@insert');
